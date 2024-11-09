@@ -6,6 +6,11 @@
   <title>Control de Tandas</title>
   <link href="style.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+   <script src="init.js"></script>
+  <script src="google.js"></script>
+
 </head>
 
 <body>
@@ -13,14 +18,14 @@
     <div class="user-icon">
       <a href="inicioSesion.html"><i class="fas fa-user"></i></a>
     </div>
-    <h1>Inicio sesion
+    <h1>Inicio sesión
       <span class="icon-container">
         <i class="fas fa-bars" id="menu-icon"></i>
       </span>
     </h1>
     <nav class="dropdown-menu" id="dropdown">
       <a href="index.html">Inicio</a>
-       <a href="crearTanda.html">Tandas</a>
+      <a href="crearTanda.html">Tandas</a>
       <a href="inicioSesion.html">Iniciar sesión</a>
       <a href="#" id="close-menu"> X </a>
     </nav>
@@ -29,8 +34,21 @@
   <main>
     <!-- Sección Principal -->
     <section id="principal">
-      <h2>Bienvenido al Control de Tandas</h2>
-      <p>Gestione sus tandas de manera organizada y eficiente.</p>
+      <!--datos para inicio de sesion-->
+         <h1>Autenticación</h1>
+          <fieldset class="contenedor_sesion">
+            <figure><img id="avatar" alt="Avatar"></figure>
+              <fieldset>
+                <legend>Email</legend>
+                <output id="email"><progress max="100">Cargando…</progress></output>
+              </fieldset>
+            <fieldset>
+              <legend>Nombre</legend>
+              <output id="nombre"></output>
+            </fieldset>
+             <button  class="salir"
+       onclick="terminaSesión()">CERRAR SESION</button>
+          </fieldset>
     </section>
 
     <footer>
@@ -38,5 +56,7 @@
     </footer>
 
   <script src="script.js"></script>
+ 
 </body>
 </html>
+
